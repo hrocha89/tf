@@ -1,0 +1,33 @@
+<form #form="ngForm" (submit)="login()">
+
+  <div class="row">
+
+    <div class="col-12 mb-3">
+      <label for="usuário" class="form-label">Usuário</label>
+      <input type="text" class="form-control" id="usuário" placeholder="usuário"
+             [(ngModel)]="user.name"
+             name="name"
+             #name="ngModel"
+             pattern="([A-ZÀ-Úa-zà-ú0-9\s]+)"
+             required>
+    </div>
+
+    <div class="col-12 mb-3">
+      <label for="senha" class="form-label">Senha</label>
+      <input type="password" class="form-control" id="senha" placeholder="senha"
+             [(ngModel)]="user.password"
+             name="password"
+             #password="ngModel"
+             pattern="([A-ZÀ-Úa-zà-ú0-9\s]+)"
+             required>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-10">
+      <button type="submit" class="btn btn-outline-success" [disabled]="form.invalid">Entrar</button>
+    </div>
+  </div>
+
+</form>
